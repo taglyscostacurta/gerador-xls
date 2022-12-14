@@ -1,0 +1,27 @@
+1 
+depois de importado o framework, e o driver do sqlite3 
+"database/sql"
+_ "github.com/mattn/go-sqlite3" 
+(como o sqlite3 nao é usado diretamente no codigo, é necessario importar com o _ para que o go nao reclame que o pacote nao é usado)
+
+2
+rodar no bash os comandos
+touch products.db (cria o arquivo do banco de dados)
+sqlite3 products.db (abre o banco de dados)
+create table products (id integer primary key, name text, price real); (cria a tabela products com os campos id, name e price)
+.table (verifica se a tabela foi criada)
+
+
+3
+rodar o codigo
+go run main.go
+criar um produto no postman/insomnia
+verificar se o produto foi criado no banco de dados
+sqlite3 .products.db
+select * from products;
+
+
+
+
+
+
