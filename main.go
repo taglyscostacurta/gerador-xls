@@ -1,12 +1,18 @@
 package main
 
 import (
-	"github.com/taglyscostacurta/gerador-xls/services"
+	"github.com/labstack/echo/v4"
+	"github.com/taglyscostacurta/gerador-xls/db"
+	_ "github.com/taglyscostacurta/gerador-xls/services"
 )
 
 func main() {
 
-	services.Generator()
+	//services.Generator()
 
-	db.CreateProduct(db.Product{Name: "Product 1", Price: 10.00})
+	db.CreateProducts()
+	e := echo.New()
+	e.GET("/products", db.GetProducts)
+	e.Logger.Fatal(e.Start(":8000"))
+
 }
