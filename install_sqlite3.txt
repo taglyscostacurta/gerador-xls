@@ -17,7 +17,7 @@ rodar o codigo
 go run main.go
 criar um produto no postman/insomnia
 verificar se o produto foi criado no banco de dados
-sqlite3 .products.db
+sqlite3 products.db
 select * from products;
 
 
